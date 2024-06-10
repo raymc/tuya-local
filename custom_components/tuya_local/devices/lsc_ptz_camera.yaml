@@ -20,12 +20,18 @@ primary_entity:
       name: snapshot
 secondary_entities:
   - entity: switch
-    name: Flip image
+    name: Abrir puerta
     category: config
+    icon: "mdi:pan"
     dps:
-      - id: 103
+      - id: 148
         type: boolean
+        optional: true
         name: switch
+        mapping:
+          - dps_val: null
+            value: false
+            hidden: true
   - entity: switch
     name: Timestamp
     category: config
@@ -38,22 +44,6 @@ secondary_entities:
           - dps_val: null
             value: false
             hidden: true
-  - entity: switch
-    name: Privacy
-    category: config
-    icon: "mdi:incognito"
-    dps:
-      - id: 105
-        type: boolean
-        name: switch
-        optional: true
-        mapping:
-          - dps_val: null
-            value: false
-            hidden: true
-            icon: "mdi:incognito-off"
-          - dps_val: false
-            icon: "mdi:incognito-off"
   - entity: select
     name: Motion sensitivity
     icon: "mdi:motion-sensor"
@@ -138,15 +128,6 @@ secondary_entities:
           - dps_val: 2003
             value: Card error
   - entity: button
-    name: PTZ stop
-    icon: "mdi:pan"
-    category: config
-    dps:
-      - id: 116
-        type: boolean
-        name: button
-        optional: true
-  - entity: button
     name: PTZ up
     icon: "mdi:pan-up"
     category: config
@@ -159,137 +140,6 @@ secondary_entities:
           - dps_val: "0"
             value: true
           - value: false
-  - entity: button
-    name: PTZ right-up
-    icon: "mdi:top-right"
-    category: config
-    dps:
-      - id: 119
-        type: string
-        name: button
-        optional: true
-        mapping:
-          - dps_val: "1"
-            value: true
-          - value: false
-  - entity: button
-    name: PTZ right
-    icon: "mdi:pan-right"
-    category: config
-    dps:
-      - id: 119
-        type: string
-        name: button
-        optional: true
-        mapping:
-          - dps_val: "2"
-            value: true
-          - value: false
-  - entity: button
-    name: PTZ right-down
-    icon: "mdi:pan-bottom-right"
-    category: config
-    dps:
-      - id: 119
-        type: string
-        name: button
-        optional: true
-        mapping:
-          - dps_val: "3"
-            value: true
-          - value: false
-  - entity: button
-    name: PTZ down
-    icon: "mdi:pan-down"
-    category: config
-    dps:
-      - id: 119
-        type: string
-        name: button
-        optional: true
-        mapping:
-          - dps_val: "4"
-            value: true
-          - value: false
-  - entity: button
-    name: PTZ left-down
-    icon: "mdi:pan-bottom-left"
-    category: config
-    dps:
-      - id: 119
-        type: string
-        name: button
-        optional: true
-        mapping:
-          - dps_val: "5"
-            value: true
-          - value: false
-  - entity: button
-    name: PTZ left
-    icon: "mdi:pan-left"
-    category: config
-    dps:
-      - id: 119
-        type: string
-        name: button
-        optional: true
-        mapping:
-          - dps_val: "6"
-            value: true
-          - value: false
-  - entity: button
-    name: PTZ left-up
-    icon: "mdi:pan-top-left"
-    category: config
-    dps:
-      - id: 119
-        type: string
-        name: button
-        optional: true
-        mapping:
-          - dps_val: "7"
-            value: true
-          - value: false
-  - entity: switch
-    name: PTZ calibration
-    category: config
-    icon: "mdi:pan"
-    dps:
-      - id: 132
-        type: boolean
-        optional: true
-        name: switch
-        mapping:
-          - dps_val: null
-            value: false
-            hidden: true
-  - entity: switch
-    name: Sound detection
-    icon: "mdi:ear-hearing"
-    category: config
-    dps:
-      - id: 139
-        type: boolean
-        name: switch
-        optional: true
-        mapping:
-          - dps_val: null
-            value: false
-            hidden: true
-  - entity: select
-    name: Sound sensitivity
-    icon: "mdi:ear-hearing"
-    category: config
-    dps:
-      - id: 140
-        type: string
-        optional: true
-        name: option
-        mapping:
-          - dps_val: "0"
-            value: Low
-          - dps_val: "1"
-            value: "High"
   - entity: select
     name: Recording mode
     icon: "mdi:file-video"
@@ -321,40 +171,4 @@ secondary_entities:
         type: string
         name: log_message
         optional: true
-  - entity: switch
-    name: Motion tracking
-    icon: "mdi:motion-sensor"
-    category: config
-    dps:
-      - id: 161
-        type: boolean
-        name: switch
-        optional: true
-        mapping:
-          - dps_val: false
-            icon: "mdi:motion-sensor-off"
-  - entity: switch
-    name: Human detection
-    icon: "mdi:human"
-    category: config
-    dps:
-      - id: 170
-        type: boolean
-        name: switch
-        optional: true
-  - entity: select
-    name: Anti-flicker
-    icon: "mdi:television-classic"
-    category: config
-    dps:
-      - id: 188
-        type: string
-        name: option
-        optional: true
-        mapping:
-          - dps_val: "0"
-            value: "Off"
-          - dps_val: "1"
-            value: "50Hz"
-          - dps_val: "2"
-            value: "60Hz"
+
